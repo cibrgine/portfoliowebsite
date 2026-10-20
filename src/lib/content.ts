@@ -1,6 +1,3 @@
-import awbsLogo from "@/assets/logo.png";
-import alBaridLogo from "@/assets/GBAM_LOGO_(1).png";
-
 export const PROFILE = {
   email: "cibrgine@gmail.com",
   github: "https://github.com/cibrgine",
@@ -19,7 +16,6 @@ export type DocEntry = {
   title: string;
   tag: string;
   dates?: string;
-  logo?: string;
   summary: string;
   stack: string[];
   contributions: string[];
@@ -34,7 +30,6 @@ export const EXPERIENCES: DocEntry[] = [
     title: "AWBS",
     tag: "AI Engineering & Consulting Intern",
     dates: "June 2026 – August 2026",
-    logo: awbsLogo,
     summary: "Assessed enterprise workflows to identify high-ROI AI integration opportunities, authored strategic technical roadmaps, and architected automated data ingestion and validation pipelines for heterogeneous formats.",
     stack: ["Python", "Data Ingestion", "Schema Validation", "Enterprise AI", "Technical Roadmapping"],
     contributions: [
@@ -49,7 +44,6 @@ export const EXPERIENCES: DocEntry[] = [
     title: "Al Barid",
     tag: "Web Development Intern",
     dates: "June 2025 – July 2025",
-    logo: alBaridLogo,
     summary: "Engineered a full-stack parcel and courier delivery management web application featuring role-based access control and high-performance relational database schemas.",
     stack: ["PHP", "JavaScript", "MySQL", "HTML5/CSS3", "RBAC", "Database Indexing"],
     contributions: [

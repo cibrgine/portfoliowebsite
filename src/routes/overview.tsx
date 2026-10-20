@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { EXPERIENCES, PROJECTS, SKILLS, PROFILE, type DocEntry } from "@/lib/content";
 import { SiteFooter } from "@/components/SiteFooter";
-import image1 from "@/assets/image1.jpg";
-import image2 from "@/assets/image2.jpg";
+import awbsLogo from "@/assets/logo.png";
+import baridLogo from "@/assets/GBAM_LOGO_(1).png";
 import image3 from "@/assets/image3.jpg";
 
 export const Route = createFileRoute("/overview")({
@@ -18,8 +18,6 @@ export const Route = createFileRoute("/overview")({
   component: Overview,
 });
 
-const THUMBS = [image1, image2, image3];
-
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return <h2 className="mb-8 text-3xl font-bold tracking-tight md:text-4xl"><span className="mr-3 font-mono text-base text-primary">//</span>{children}</h2>;
 }
@@ -29,11 +27,6 @@ function DocCard({ entry, type, img }: { entry: DocEntry; type: "experience" | "
     <Link to="/docs/$type/$id" params={{ type, id: entry.id }} className="group relative block aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card">
       <img src={img} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-      {entry.logo && (
-        <div className="absolute right-6 top-6 rounded-lg bg-white p-2">
-          <img src={entry.logo} alt={`${entry.title} logo`} className="h-12 w-auto max-w-32 object-contain" />
-        </div>
-      )}
       <div className="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
         <span className="rounded-full border border-border bg-glass px-3 py-1 font-mono text-xs text-primary backdrop-blur">{entry.tag}</span>
         <h3 className="mt-3 text-2xl font-semibold">{entry.title}</h3>
@@ -73,7 +66,7 @@ function Overview() {
         <section>
           <SectionTitle>My Professional Experience</SectionTitle>
           <div className="grid gap-6 md:grid-cols-2">
-            {EXPERIENCES.map((e, i) => <DocCard key={e.id} entry={e} type="experience" img={THUMBS[(i + 2) % 3]!} />)}
+            {EXPERIENCES.map((e, i) => <DocCard key={e.id} entry={e} type="experience" img={i === 0 ? awbsLogo : baridLogo} />)}
           </div>
         </section>
 
