@@ -31,7 +31,10 @@ function DocPage() {
           <ArrowLeft className="h-4 w-4" /> Back to Overview
         </Link>
         <p className="mt-10 font-mono text-xs uppercase tracking-widest text-primary">{type} / {entry.tag}</p>
-        <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{entry.title}</h1>
+        <div className="mt-2 flex items-center gap-4">
+          {entry.logo && <img src={entry.logo} alt={`${entry.title} logo`} className="h-12 w-auto max-w-32 rounded-md bg-white p-1 object-contain" />}
+          <h1 className="text-4xl font-bold tracking-tight md:text-5xl">{entry.title}</h1>
+        </div>
         {entry.dates && <p className="mt-3 font-mono text-sm text-muted-foreground">{entry.dates}</p>}
 
         <h2 className="mt-12 text-xl font-semibold">Overview</h2>
